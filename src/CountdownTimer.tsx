@@ -53,11 +53,11 @@ const CountdownTimer = () => {
     };
 
     /// btn to test effects
-    const testValentineEvent = () => {
-        setIsValentinesDay(true);
-        setShowConfetti(true);
-        playRomanticMusic();
-    };
+    // const testValentineEvent = () => {
+    //     setIsValentinesDay(true);
+    //     setShowConfetti(true);
+    //     playRomanticMusic();
+    // };
 
 
     return (
@@ -120,12 +120,12 @@ const CountdownTimer = () => {
                             </motion.div>
                         ))}
                     </div>
-                    <button
+                    {/* <button
                         onClick={testValentineEvent}
                         className="mt-6 bg-red-500 px-4 py-2 rounded-full shadow-lg font-bold text-white hover:bg-red-600 transition"
                     >
                         🎉 Test Valentine’s Event
-                    </button>
+                    </button> */}
                     <div className="absolute top-16 left-10 animate-float">💖</div>
                     <div className="absolute top-20 right-16 animate-float">💘</div>
                     <div className="absolute bottom-10 left-14 animate-float">❤️</div>
