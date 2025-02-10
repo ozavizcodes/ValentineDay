@@ -2,7 +2,6 @@ import { useState } from "react";
 
 // some example love quotes or use external api;
 const loveQuotes = [
-    "Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day.",
     "You are my today and all of my tomorrows.",
     "In your smile, I see something more beautiful than the stars.",
     "Every love story is beautiful, but ours is my favorite.",
@@ -51,6 +50,8 @@ const loveQuotes = [
     "You are the one I’ve been waiting for my whole life.",
     "You are the reason my heart beats a little faster every day.",
     "Being deeply loved by someone gives you strength while loving someone deeply gives you courage.",
+    "Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day.",
+
 ];
 
 const LoveQuotes = () => {
@@ -64,8 +65,13 @@ const LoveQuotes = () => {
 
     return (
         <div className="flex flex-col items-center justify-center text-white text-center p-4">
-            <p className="text-lg italic bg-pink-700 p-4 rounded-lg shadow-lg">{loveQuotes[index]}</p>
-            <button onClick={nextQuote} className="mt-4 px-4 py-2 bg-red-600 text-white font-bold rounded-lg shadow-md hover:bg-red-700 transition">Next </button>
+            <p className="text-lg italic bg-pink-700 p-2 rounded-lg shadow-lg">{loveQuotes[index]}</p>
+            <button
+                onClick={nextQuote}
+                className="mt-4 px-6 py-3 bg-gradient-to-r from-red-500 to-pink-500
+ text-white font-bold rounded-lg shadow-md hover:bg-red-700 hover:shadow-red-500/50 transition-all duration-300 ease-in-out transform hover:scale-105">
+                Next
+            </button>
 
         </div>
     )

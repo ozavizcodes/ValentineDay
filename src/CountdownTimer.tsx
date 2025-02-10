@@ -53,11 +53,11 @@ const CountdownTimer = () => {
     };
 
     /// btn to test effects
-    // const testValentineEvent = () => {
-    //     setIsValentinesDay(true);
-    //     setShowConfetti(true);
-    //     playRomanticMusic();
-    // };
+    const testValentineEvent = () => {
+        setIsValentinesDay(true);
+        setShowConfetti(true);
+        playRomanticMusic();
+    };
 
 
     return (
@@ -83,7 +83,7 @@ const CountdownTimer = () => {
                     <h1 className="text-4xl md:text-5xl font-extrabold text-pink-300 neon-text glow">
                         💖 Happy Valentine's Day! 💖
                     </h1>
-                    <p className="text-lg mt-4 italic">Love comes in many forms — through friendship, laughter, and the special bond we share. 💖
+                    <p className="text-lg mt-4 italic max-w-2xl mx-auto" >Love comes in many forms — through friendship, laughter, and the special bond we share. 💖
                         Today, I celebrate you as i do always. You make my world brighter, and I’m grateful for you every day! ❤️  </p>
                 </motion.div>
             ) : (
@@ -120,12 +120,12 @@ const CountdownTimer = () => {
                             </motion.div>
                         ))}
                     </div>
-                    {/* <button
+                    <button
                         onClick={testValentineEvent}
                         className="mt-6 bg-red-500 px-4 py-2 rounded-full shadow-lg font-bold text-white hover:bg-red-600 transition"
                     >
                         🎉 Test Valentine’s Event
-                    </button> */}
+                    </button>
                     <div className="absolute top-16 left-10 animate-float">💖</div>
                     <div className="absolute top-20 right-16 animate-float">💘</div>
                     <div className="absolute bottom-10 left-14 animate-float">❤️</div>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import CountdownTimer from "./CountdownTimer";
 import LoveQuotes from "./LoveQuotes";
 
-const hearts = Array.from({ length: 20 });
+const hearts = Array.from({ length: 15 });
 
 const isValentinesDay = new Date().getMonth() === 1 && new Date().getDate() === 14;
 
