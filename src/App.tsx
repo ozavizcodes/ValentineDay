@@ -37,28 +37,7 @@ function App() {
         </motion.div>
       ))}
 
-      {/* Valentine's Day Message */}
-      {/* <motion.h1
-        className="text-4xl md:text-5xl font-extrabold text-center bg-gradient-to-r from-pink-400 via-red-500 to-purple-600 text-transparent bg-clip-text drop-shadow-lg mt-6"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1 }}
-      >
-        ❤️ Happy Valentine's Day ❤️ */}
-      {/* </motion.h1> */}
 
-      <motion.h1
-        className="text-4xl md:text-5xl font-extrabold text-center bg-gradient-to-r from-pink-400 via-red-500 to-purple-600 text-transparent bg-clip-text drop-shadow-lg mt-6"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1 }}
-      >
-        {isValentinesDay ? "❤️ Happy Valentine's Day ❤️ " : "💖 Valentine is coming💖"}
-      </motion.h1>
-
-      {/* Countdown Timer & Love Quotes */}
-      {/* <CountdownTimer />
-      <LoveQuotes /> */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
