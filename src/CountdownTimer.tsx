@@ -53,12 +53,87 @@ const CountdownTimer = () => {
     };
 
     /// btn to test effects
-    // const testValentineEvent = () => {
-    //     setIsValentinesDay(true);
-    //     setShowConfetti(true);
-    //     playRomanticMusic();
-    // };
+    const testValentineEvent = () => {
+        setIsValentinesDay(true);
+        setShowConfetti(true);
+        playRomanticMusic();
+    };
 
+
+    // return (
+    //     <div className="flex flex-col items-center justify-center text-white text-center p-4 relative">
+    //         {/* {showConfetti && <Confetti numberOfPieces={500} />} */}
+    //         {showConfetti && (
+    //             <div className="fixed inset-0 pointer-events-none">
+    //                 <Confetti
+    //                     numberOfPieces={500}
+    //                     width={window.innerWidth}
+    //                     height={window.innerHeight}
+    //                 />
+    //             </div>
+    //         )}
+    //         {isValentinesDay ? (
+    //             <motion.div
+    //                 initial={{ opacity: 0 }}
+    //                 animate={{ opacity: 1 }}
+    //                 transition={{ duration: 1.5 }}
+    //                 className="text-center"
+    //             >
+    //                 {/* {showConfetti && <Confetti numberOfPieces={500} />} */}
+    //                 <h1 className="text-4xl md:text-5xl font-extrabold text-pink-300 neon-text glow">
+    //                     💖 Happy Valentine's Day! 💖
+    //                 </h1>
+    //                 <p className="text-lg mt-4 italic max-w-2xl mx-auto" >Love comes in many forms — through friendship, laughter, and the special bond we share. 💖
+    //                     Today, I celebrate you as i do always. You make my world brighter, and I’m grateful for you every day! ❤️  </p>
+    //             </motion.div>
+    //         ) : (
+    //             <>
+    //                 <motion.h1
+    //                     className="text-4xl md:text-4xl font-extrabold text-center bg-gradient-to-r from-pink-400 via-red-700 to-purple-400 text-transparent bg-clip-text drop-shadow-lg mt-6 mb-2"
+    //                     initial={{ opacity: 0, scale: 0.8 }}
+    //                     animate={{ opacity: 1, scale: 1 }}
+    //                     transition={{ duration: 1 }}
+    //                 >
+    //                     💖 Valentine is coming 💖
+    //                 </motion.h1>
+
+    //                 <motion.h2
+    //                     className="text-l font-semibold mb-4 neon-text italic"
+    //                     initial={{ opacity: 0, y: -10 }}
+    //                     animate={{ opacity: 1, y: 0 }}
+    //                     transition={{ duration: 1 }}
+    //                 >
+    //                     💘 Just a few more days until love takes over! 💘
+    //                 </motion.h2>
+
+    //                 <div className="flex space-x-4 text-lg font-bold">
+    //                     {Object.entries(timeLeft).map(([unit, value], i) => (
+    //                         <motion.div
+    //                             key={unit}
+    //                             className="p-4 w-20 h-20 flex flex-col items-center justify-center bg-pink-600 rounded-lg shadow-xl border-2 border-white text-lg md:text-xl pulse-animation"
+    //                             initial={{ scale: 0.8, opacity: 0 }}
+    //                             animate={{ scale: 1, opacity: 1 }}
+    //                             transition={{ duration: 0.5, delay: i * 0.2 }}
+    //                         >
+    //                             <p className="text-4xl font-bold">{value}</p>
+    //                             <span className="text-sm">{unit.toUpperCase()}</span>
+    //                         </motion.div>
+    //                     ))}
+    //                 </div>
+    //                 {/* <button
+    //                     onClick={testValentineEvent}
+    //                     className="mt-6 bg-red-500 px-4 py-2 rounded-full shadow-lg font-bold text-white hover:bg-red-600 transition"
+    //                 >
+    //                     🎉 Test Valentine’s Event
+    //                 </button> */}
+    //                 <div className="absolute top-16 left-10 animate-float">💖</div>
+    //                 <div className="absolute top-20 right-16 animate-float">💘</div>
+    //                 <div className="absolute bottom-10 left-14 animate-float">❤️</div>
+    //                 <div className="absolute bottom-12 right-10 animate-float">💕</div>
+    //             </>
+    //         )}
+    //     </div>
+    // );
 
     return (
         <div className="flex flex-col items-center justify-center text-white text-center p-2 md:p-4 relative">
@@ -94,7 +169,7 @@ const CountdownTimer = () => {
                     </motion.h1>
 
                     <motion.h2
-                        className="text-base md:text-lg font-semibold mb-3 neon-text italic"
+                        className="text-sm md:text-base lg:text-lg  font-semibold mb-3 neon-text italic"
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
@@ -117,12 +192,12 @@ const CountdownTimer = () => {
                         ))}
                     </div>
 
-                    {/* <button
+                    <button
                         onClick={testValentineEvent}
                         className="mt-6 bg-red-500 px-4 py-2 rounded-full shadow-lg font-bold text-white hover:bg-red-600 transition"
                     >
                         🎉 Test Valentine’s Event
-                    </button> */}
+                    </button>
 
                     <div className="absolute top-16 left-10 animate-float text-sm md:text-lg">💖</div>
                     <div className="absolute top-20 right-16 animate-float text-sm md:text-lg">💘</div>
