@@ -149,9 +149,10 @@ const CountdownTimer = () => {
                     transition={{ duration: 1.5 }}
                     className="text-center"
                 >
-                    <h1 className="text-3xl md:text-4xl font-extrabold text-pink-300 neon-text glow">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-pink-300 neon-text glow">
                         💖 Happy Valentine's Day! 💖
                     </h1>
+
                     <p className="text-base md:text-lg mt-3 italic max-w-lg mx-auto">
                         Love comes in many forms — through friendship, laughter, and the special bond we share. 💖
                         Today, I celebrate you as I always do. You make my world brighter, and I’m grateful for you every day! ❤️
