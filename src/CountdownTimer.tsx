@@ -14,12 +14,11 @@ const CountdownTimer = () => {
         const now = new Date().getTime();
 
         const difference = valentineDay - now;
-
         return {
-            days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-            hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-            minutes: Math.floor((difference / (1000 * 60)) % 60),
-            seconds: Math.floor((difference / 1000) % 60),
+            days: Math.max(0, Math.floor(difference / (1000 * 60 * 60 * 24))),
+            hours: Math.max(0, Math.floor((difference / (1000 * 60 * 60)) % 24)),
+            minutes: Math.max(0, Math.floor((difference / (1000 * 60)) % 60)),
+            seconds: Math.max(0, Math.floor((difference / 1000) % 60)),
         };
 
     }
@@ -28,36 +27,53 @@ const CountdownTimer = () => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
     const [isValentinesDay, setIsValentinesDay] = useState(false);
     const [showConfetti, setShowConfetti] = useState(false);
-    const [audio] = useState(new Audio(loveStoryMusic));
+
+
+    const [audio] = useState(() => {
+        const audioInstance = new Audio(loveStoryMusic);
+        audioInstance.loop = true;
+        return audioInstance;
+    });
 
     useEffect(() => {
-
         const timer = setInterval(() => {
             const newTimeLeft = calculateTimeLeft();
             setTimeLeft(newTimeLeft);
 
-            if (newTimeLeft.days === 0 && newTimeLeft.hours === 0 && newTimeLeft.minutes === 0 && newTimeLeft.seconds === 0) {
+            if (newTimeLeft.days <= 0 && newTimeLeft.hours <= 0 && newTimeLeft.minutes <= 0 && newTimeLeft.seconds <= 0) {
                 setIsValentinesDay(true);
                 setShowConfetti(true);
-                playRomanticMusic();
+                playMusic();
+                clearInterval(timer);
             }
-        }, 1000)
+        }, 1000);
 
         return () => clearInterval(timer);
-    }, [])
+    }, []);
 
+    useEffect(() => {
+        const enableAudio = () => {
+            playMusic();
+            document.removeEventListener("click", enableAudio);
+            document.removeEventListener("keydown", enableAudio);
+            document.removeEventListener("scroll", enableAudio);
+        };
 
-    const playRomanticMusic = () => {
-        audio.loop = true; // Loop music
+        document.addEventListener("click", enableAudio);
+        document.addEventListener("keydown", enableAudio);
+        document.addEventListener("scroll", enableAudio);
+
+        return () => {
+            document.removeEventListener("click", enableAudio);
+            document.removeEventListener("keydown", enableAudio);
+            document.removeEventListener("scroll", enableAudio);
+        };
+    }, []);
+
+    const playMusic = () => {
         audio.play().catch((error) => console.log("Music playback error:", error));
     };
 
-    /// btn to test effects
-    // const testValentineEvent = () => {
-    //     setIsValentinesDay(true);
-    //     setShowConfetti(true);
-    //     playRomanticMusic();
-    // };
 
 
 
@@ -119,13 +135,6 @@ const CountdownTimer = () => {
                             </motion.div>
                         ))}
                     </div>
-
-                    {/* <button
-                        onClick={testValentineEvent}
-                        className="mt-6 bg-red-500 px-4 py-2 rounded-full shadow-lg font-bold text-white hover:bg-red-600 transition"
-                    >
-                        🎉 Test Valentine’s Event
-                    </button> */}
 
                     <div className="absolute top-16 left-10 animate-float text-sm md:text-lg">💖</div>
                     <div className="absolute top-20 right-16 animate-float text-sm md:text-lg">💘</div>
